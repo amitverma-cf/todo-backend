@@ -47,8 +47,8 @@ app.post("/todo", async (req, res) => {
 
 app.delete("/todo/:id", async (req, res) => {
     try {
-        const { tid } = req.params
-        const r = await todoModel.deleteOne({ _id: tid })
+        const { id } = req.params
+        const r = await todoModel.deleteOne({ _id: id })
         res.json({ message: "Todo deleted", data: r })
     } catch (e) {
         console.log(e)
